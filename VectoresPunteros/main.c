@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 void mostrar(int *puntero,int cant);
+void mostrarMayor(int *puntero,int cant);
+
 int main()
 {
     int numeros[3];
@@ -17,6 +19,7 @@ int main()
     printf("\npuntero :%d",*(puntero+4));
     printf("\nnumero :%d",*numeros);
     mostrar(numeros,3);
+    mostrarMayor(numeros,3);
 
 
     return 0;
@@ -28,6 +31,21 @@ void mostrar(int *puntero,int cant)
   {
     printf("\nnumero :%d",*(puntero+i));
   }
+}
+void mostrarMayor(int *puntero,int cant)
+{
+  int i;
+  int max;
+  int flag =0;
+  for(i=0;i<cant;i++)
+  {
+    if(*(puntero+i)>max || flag==0)
+    {
+      max = *(puntero+i);
+      flag = 1;
+    }
+  }
 
+  printf("\nNum max: %d",max);
 
 }
